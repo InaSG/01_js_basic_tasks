@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>one.lt REGISTRACIJOS FORMA</h1>
+    <div>
+        <label for="vardas">Jūsų vardas</label>
+        <input type="text" minlength="3" maxlength="40" placeholder="Vardas" id="vardas">
+    </div><br>
+    <div>
+        <label for="pavarde">Pavardė</label>
+        <input type="text" minlength="3" maxlength="70" placeholder="Pavarde" id="pavarde">
+    </div><br>
+    <div>
+        <label for="gimimo_data">Gimimo data</label>
+        <input type="date" min="1900" id="gimimo_data">
+    </div><br>
+    <div>
+        <label for="el_pastas">Elektroninis paštas</label>
+        <input type="email" placeholder="**************@*********.***" id="el_pastas">
+    </div> <br>
+    <div>
+        <label for="ar_sutinka"><a href="#">Ar sutinkate su taisyklėmis ir salygomis?</a></label>
+        <input type="checkbox" id="ar_sutinka">
+    </div><br>
+    <div>
+        <button onclick="getData()">Registruotis</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

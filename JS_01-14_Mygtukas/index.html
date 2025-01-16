@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1. HTML’e sukurkite elementą button su id=my-button. -->
+    <div class="button_container">
+        <button id="my-button"></button>
+    </div>
+
+    <!-- 2. Pridėkite įvesties laukelį, kuriame būtų įrašomas mygtuko 
+pavadinimas (vidinis mygtuko tekstas), šalia jo
+mygtukas “pritaikyti”, ant kurio paspaudus pasikeis my-button 
+tekstas -->
+    <div class="button_container">
+        <div>
+            <label class="etikete" for="pavadinimas">Įveskite mygtuko pavadinimą</label>
+            <input type="text" placeholder="Pavadinimas" id="pavadinimas">
+        </div>
+        <div>
+            <button class="pritaikyti" onclick="pavadinti()">Pritaikyti</button>
+        </div>
+    </div>
+
+    <!-- 3. Pridėkite fono spalvos įvesties laukelį , šalia jo mygtukas 
+“pritaikyti”, ant kurio paspaudus pasikeis my-button fono spalva.
+ -->
+<div class="button_container">
+    <div>
+        <label class="etikete" for="spalva">Kokia spalva nuspalvinti mygtuką?</label>
+        <input type="text" placeholder="Spalva" id="spalva">
+    </div>
+    <div>
+        <button class="pritaikyti" onclick="pakeisti_spalva()">Pritaikyti</button>
+    </div>
+</div>
+
+    <!-- 4. Pridėkite įvesties laukelį skaičiui, kuriuo nusakysite, kiek 
+ pikselių reikia užapvalinti mygtuką. Įprastalaukelio reikšmė: 0; -->
+<div class="button_container">
+    <div>
+        <label class="etikete" for="uzapvalinimas">Kiek užapvalinti mygtuko kampus?</label>
+        <input type="text" placeholder=" 20px" id="uzapvalinimas">
+    </div>
+    <div>
+        <button class="pritaikyti" onclick="uzapvalinti_kampus()">Pritaikyti</button>
+    </div>
+</div>
+
+    <!-- 5. Pridėkite įvesties laukelį skaičiui, kuriuo nusakysite mygtuko 
+šoninių vidinių paraščių plotį; -->
+<div class="button_container">
+    <div>
+        <label class="etikete" for="son_parastes">Mygtuko paraštės iš šonų</label>
+        <input type="text" placeholder=" 20px" id="son_parastes">
+    </div>
+    <div>
+        <button class="pritaikyti" onclick="atstumti_nuo_krastu()">Pritaikyti</button>
+    </div>
+</div>
+
+    <!-- 6. Pridėkite įvesties laukelį skaičiui, kuriuo nusakysite mygtuko 
+viršutinių ir apatinių vidinių paraščių aukštį; -->
+<div class="button_container">
+    <div>
+        <label class="etikete" for="virs_apat_parastes">Mygtuko paraštės iš viršaus ir apačios</label>
+        <input type="text" placeholder=" 20px" id="virs_apat_parastes">
+    </div>
+    <div>
+        <button class="pritaikyti" onclick="atstumti_nuo_virs_apac()">Pritaikyti</button>
+    </div>
+</div>
+
+    <!-- 7. Pridėkite įvesties laukelius skaičiui ir spalvai, kuriuo nusakysite, 
+kokio storio ir spalvos turėtų būti kraštinė; -->
+<div class="button_container">
+    <div class="double_input">
+        <label class="etikete" for="krast_spalva">Mygtuko kraštinės spalva</label>
+        <input type="text" placeholder= "Kraštinės spalva" id="krast_spalva">
+    </div>
+    <div class="double_input">
+        <label class="etikete" for="krast_storis">Mygtuko kraštinės storis</label>
+        <input type="text" placeholder="1px" id="krast_storis">
+    </div>
+    <div>
+        <button class="pritaikyti" onclick="nustatyti_krast_stori_spalva()">Pritaikyti</button>
+    </div>
+</div>
+
+    <!-- 8. Pridėkite select elementą pasirinkimui, koks turėtų būti kraštinės 
+stilius (taškuotas, brūkšniuotas…); -->
+<div class="button_container">
+    <div>
+        <label class="etikete" for="krast_stilius">Pasirinkite kraštinės stilių</label>
+        <select name="krast_stilius" id="krast_stilius">
+            <option value="dotted">Taškeliai</option>
+            <option value="dashed">Brūkšneliai</option>
+            <option value="solid">Ištisinė</option>
+            <option value="double">Dviguba</option>
+            <option value="groove">Iškilusi</option>
+            <option value="ridge">Nusileidusi</option>
+            <option value="inset">Žemėjanti</option>
+            <option value="outset">Aukštėjanti</option>
+            <option value="none">Jokios</option>
+            <option value="hidden">Paslėpta</option>
+            <option value="dotted dashed solid double">Mišri</option>
+        </select>
+    </div>
+    <div>
+        <button class="pritaikyti" onclick="nustatyti_krast_stiliu()">Pritaikyti</button>
+    </div>
+</div>
+
+    <script src="kodas.js"></script>
+</body>
+
+</html>

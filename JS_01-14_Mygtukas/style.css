@@ -1,0 +1,25 @@
+
+.button_container{
+    margin: 20px;
+}
+
+.double_input{
+    margin: 5px;
+}
+
+.pritaikyti{
+    margin: 5px 0;
+}
+
+.etikete{
+    margin-right: 20px;
+}
+
+#my-button {
+    height: 50px; 
+    width: 200px;
+}
+
+button:hover{
+    cursor: pointer;
+}

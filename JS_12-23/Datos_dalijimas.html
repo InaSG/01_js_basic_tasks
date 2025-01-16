@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Sukurkite programą kuri prašytų įvesti datą, kaip tekstą YYYY-MM-DD formatu. 
+            (YYYY - metai), (MM - mėnuo), (DD - mėnesio diena).
+            Iš šio formato datos sugeneruokite tris kintamuosius: metai, mėnuo, diena;
+            Juos atspausdinkite pasitelkdami console.log() funkcija.
+        */
+       var data = prompt("Įveskite datą YYYY-MM-DD formatu (kur YYYY - metai, MM - mėnuo, DD - diena)");
+
+       var metai = data.slice(0,4);
+       var menuo = data.slice(5,7);
+       var diena = data.slice(8,10);
+
+       console.log(`${diena}/${menuo}/${metai}`)
+    </script>
+</body>
+</html>
