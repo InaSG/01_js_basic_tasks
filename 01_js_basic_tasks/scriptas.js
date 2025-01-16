@@ -95,17 +95,17 @@ grindims kloti, jei plytelių vieno kvadrato kaina yra 23 eurai. Plytelių reiki
 Plytelės supakuotos po 1.5m2 ir parduotuvės darbuotojai nesutinka ardyti pakuočių. Galima pirkti tik pilnas pakuotes.  
 Išvedamo atsakymo pvz.: „Kambario dydis X ir Y, reikės Z pakuočių plytelių. Reikalinga pinigų suma E“
 */
-function plyteliu_kaina(ilgis, plotis){
+function plyteliu_kaina(ilgis, plotis, kaina, pakuote, paklaida){
     let grindu_plotas = ilgis * plotis;
-    let reikia_plyteliu = grindu_plotas + grindu_plotas * 0.05;
-    let reikia_pakuociu = Math.ceil(reikia_plyteliu / 1.5);
-    let plyt_pakuotes_kaina = 23 * 1.5
+    let reikia_plyteliu = grindu_plotas + grindu_plotas * paklaida;
+    let reikia_pakuociu = Math.ceil(reikia_plyteliu / pakuote);
+    let plyt_pakuotes_kaina = kaina * pakuote
     let plyteliu_kaina = reikia_pakuociu * plyt_pakuotes_kaina;
     return `Kambario dydis: ${ilgis} x ${plotis}. Reikės ${reikia_pakuociu} pakuočių plytelių. Reikalinga pinigų suma - ${plyteliu_kaina} Eur.`; 
 }
 
-// console.log(plyteliu_kaina(10, 2));
-// console.log(plyteliu_kaina(10, 10));
+console.log(plyteliu_kaina(3, 4, 23, 1.5, 0.05));
+console.log(plyteliu_kaina(10, 10, 23, 1.5, 0.05));
 
 /*
 8. Pirmos lietuviškos litų monetos išėjo 1925 metais. Tai buvo 5, 2 ir 1 lito vertės sidabrinės monetos. Duotą pinigų sumą 
