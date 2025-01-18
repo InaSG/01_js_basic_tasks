@@ -1,11 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
+    <div class="game_container">
+        <div class="img_container"></div>
+        <div class="text_container">
+            <h1 id="antraste">Patikrink savo intuiciją !!!</h1>
+            <div class="throw_container">
+                <div>
+                    <div class="kas_iskris" id="kas_iskris"> Atspėk kas iškris:</div>
+                </div>
+                <div class="flex">
+                    <button class="kas_iskris button" id="ar_herbas" onclick="ar_herbas()">herbas</button>
+                    <span class="kas_iskris" id="ar">ar</span>
+                    <button class="kas_iskris button" id="ar_skaicius" onclick="ar_skaicius()">skaičius?</button>
+                </div>
+            </div>
+            <div>
+                <p class="hidden" id="atspejai">Atspėjai !!!</p>
+                <p class="hidden" id="neatspejai">Neatspėjai !</p>
+                <button class="hidden"  onclick="start_game()" id="pradeti">BANDYTI DAR KARTĄ !</button>
+            </div>
+            <div>
+                <button onclick="show_result()" id="mesti">MESTI</button>
+            </div>
+            <div>
+                <div>
+                    <img src="head.png" alt="head" class="kas_iskrito" id="skaicius">
+                    <img src="tail.png" alt="tail" class="kas_iskrito" id="herbas">
+                </div>
+
+            </div>
+        </div>
+    </div>
     <script src="kodas.js"></script>
 </body>
+
 </html>

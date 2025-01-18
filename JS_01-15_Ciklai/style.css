@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100%;
+    background-color: rgb(10, 86, 119);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game_container{
+    /* margin-left: 100px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-position: center;
+    background-image: url("coin_tossing.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20em;
+    max-width: 600px;
+    width: 80%;
+}
+
+.text_container{
+    /* border: 3px solid rgb(213, 203, 198); */
+    background-color: rgba(10, 86, 119, 0.8);
+    backdrop-filter: blur(10px);
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -15%);
+    z-index: 2;
+    width: 100%;
+    min-height: 600px;
+    max-width: 600px;
+    /* padding: 20px; */
+    text-align: center; 
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+h1{
+    /* margin-top: 20px; */
+    font-size: 2.8em;
+    color: rgba(249, 192, 112, 0.951);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.throw_container{
+    margin-top: 50px;
+}
+
+.kas_iskris{
+    margin-top: 10px;
+    font-size: 2em;
+    letter-spacing: 2px;
+    color: rgba(248, 222, 185, 0.951);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.button{
+    margin: 20px auto;
+    font-size: 2em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: rgba(249, 192, 112, 0.951);
+    background-color: rgb(10, 86, 119);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    box-shadow: 2px 4px 6px rgba(248, 222, 185, 0.951);
+    border-radius: 20px;
+    height: 60px;
+    width: 210px;
+}
+
+button:hover{
+    color: rgba(249, 192, 112, 0.951);
+    background-color: rgb(20, 137, 187);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    box-shadow: 4px 4px 6px rgba(248, 222, 185, 0.951);
+    cursor: pointer;
+}
+
+.choosed{
+    margin: 20px auto;
+    font-size: 2em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: rgba(249, 192, 112, 0.951);
+    background-color:rgb(20, 137, 187);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    box-shadow: 2px 4px 6px rgba(248, 222, 185, 0.951);
+    border-radius: 20px;
+    height: 60px;
+    width: 210px;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+#mesti{
+    margin: 5px auto;
+    font-size: 2.5em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color:  rgba(249, 192, 112, 0.951);
+    background-color: rgba(248, 222, 185, 0.951);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    box-shadow: 2px 4px 6px rgba(248, 222, 185, 0.951);
+    border-radius: 20px;
+    height: 80px;
+    width: 210px;
+}
+
+#mesti:hover{
+    color: rgba(250, 151, 12, 0.951);
+    background-color: rgba(249, 192, 112, 0.951);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    box-shadow: 2px 4px 6px rgba(249, 192, 112, 0.951);
+}
+
+.kas_iskrito{
+    visibility: hidden;
+    width: 100px;
+}
+
+#herbas{
+    position: relative;
+    right: 50px;
+    top: 10px;
+}
+
+#skaicius{
+    position: relative;
+    left: 50px;
+    top: 10px;
+}
+
+.iskrito_skaicius{
+    width: 100px;
+}
+
+.iskrito_herbas{
+    width: 100px;
+}
+
+.atspejai{
+    position: relative;
+    top: 100px;
+    font-size: 6.5em;
+    color:  rgba(249, 192, 112, 0.951);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+}
+
+.neatspejai{
+    position: relative;
+    top: 100px;
+    font-size: 6.5em;
+    color: rgba(250, 151, 12, 0.951);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+}
+
+.start_button{
+    position: relative;
+    top: 100px;
+    margin: 20px auto;
+    font-size: 2em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: rgba(249, 192, 112, 0.951);
+    background-color: rgb(10, 86, 119);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    box-shadow: 2px 4px 6px rgba(248, 222, 185, 0.951);
+    border-radius: 20px;
+    border: 2px solid black;
+    height: 80px;
+    width: 250px;
+}

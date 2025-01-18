@@ -163,9 +163,7 @@ function throwCoin(){
 
 /*
 7. Sukurkite funkciją, kuri imituoja monetos metimą 20 kartų, suskaičiuokite kiek kartų iškrito skaičius, kiek kartų iškrito herbas. 
-Paskaičiuokite procentaliai, kokiu dažnumu krito skaičius, kokiu dažnumu krito skaičius; (pasiūlymas patobulinimui mini-game - > 
-pridėti puslapyje mygtuką, leisiantį pasirinkti kokios pusės monetos tikitės, ir pridėti mesti monetą mygtukus, tada atitinkamai 
-atvaizduoti, buvo laimėta - ar pralaimėta)
+Paskaičiuokite procentaliai, kokiu dažnumu krito skaičius, kokiu dažnumu krito skaičius.
 */
 let all_throws = [];
 function how_many_heads(throws){
@@ -188,6 +186,96 @@ function how_many_heads(throws){
 }
 // console.log(all_throws);
 // console.log(how_many_heads(20));
+
+/* 
+7 (patobulinimas) Sukurti mini-game - > pridėti puslapyje mygtuką, leisiantį pasirinkti kokios pusės monetos tikitės, ir pridėti mesti monetą mygtukus, 
+tada atitinkamai atvaizduoti, buvo laimėta - ar pralaimėta)
+*/
+const antrastes_el = document.querySelector("#antraste");
+const kas_iskris_el = document.querySelector("#kas_iskris");
+const ar_herbas_el = document.querySelector("#ar_herbas");
+const ar_el = document.querySelector("#ar");
+const ar_skaicius_el = document.querySelector("#ar_skaicius");
+const mesti = document.querySelector("#mesti");
+const skaicius_el = document.querySelector("#skaicius");
+const herbas_el = document.querySelector("#herbas");
+const atspejai_el = document.querySelector("#atspejai");
+const neatspejai_el = document.querySelector("#neatspejai");
+const pradeti_el = document.querySelector("#pradeti");
+
+let pasirinkimas = "";
+let iskrito = "";
+
+function ar_skaicius(){
+    if (pasirinkimas == ""){
+        pasirinkimas = "S";
+        ar_herbas_el.className = "button";
+        ar_skaicius_el.className = "choosed";
+        console.log(pasirinkimas);
+    }
+}
+
+function ar_herbas(){
+    if (pasirinkimas == ""){
+        pasirinkimas = "H";
+        ar_skaicius_el.className = "button";
+        ar_herbas_el.className = "choosed";
+        console.log(pasirinkimas);
+    }
+}
+
+function ending(){
+    if (pasirinkimas == iskrito){
+    antrastes_el.className = "hidden";
+    kas_iskris_el.className = "hidden";
+    ar_herbas_el.className = "hidden";
+    ar_el.className = "hidden";
+    ar_skaicius_el.className = "hidden";
+    mesti.className = "hidden";
+    skaicius_el.className = "hidden";
+    herbas_el.className = "hidden";
+    atspejai_el.className = "atspejai";
+    pradeti_el.className = "start_button";
+} else {
+    antrastes_el.className = "hidden";
+    kas_iskris_el.className = "hidden";
+    ar_herbas_el.className = "hidden";
+    ar_el.className = "hidden";
+    ar_skaicius_el.className = "hidden";
+    mesti.className = "hidden";
+    skaicius_el.className = "hidden";
+    herbas_el.className = "hidden";
+    neatspejai_el.className = "neatspejai";
+    pradeti_el.className = "start_button";
+}
+}
+
+function show_result(){
+    if (iskrito == ""){
+        iskrito = throwCoin();
+    } else return;
+
+    if (pasirinkimas != null){
+        if (iskrito == "S"){
+            herbas_el.className = "kas_iskrito";
+            skaicius_el.className = "iskrito_skaicius";
+            console.log(iskrito);
+        } else {
+            skaicius_el.className = "kas_iskrito";
+            herbas_el.className ="iskrito_herbas";
+            console.log(iskrito);
+        }
+    } else{
+        alert('Pasirinkite: "herbas" ar "skaičius"');
+        return;
+    }
+    setTimeout(ending, 2000);
+}
+
+function start_game(){
+    window.location.reload();
+}
+
 
 /*
 8. Sukurkite funkciją sumAll(masyvas), kuri susumuoja visus masyvo elementus, bei gražina šią sumą kaip rezultatą;
@@ -216,9 +304,20 @@ function average(arr){
     return (suma/arr.length).toFixed(2);
 }
 
-console.log(sumAll([1, 2, 3, 4, 6, 7, 8, 9]));
+// console.log(average([1, 2, 3, 4, 6, 7, 8, 9]));
 
 /*
 10. Sukurkite funkciją findAllUniqueNumbers(masyvas), kuri atranda masyve esančius unikalius skaičius. gražina juos masyvo pavidalu: 
 pvz: findAllUniqueNumbers([1,1,2,8,8,1, 4, 6]) // [1,2,8,4,6];
 */
+function findAllUniqueNumbers(masyvas){
+    const naujas_masyvas = [];
+    for(let i = 0; i < masyvas.length; i++){
+        if (!(naujas_masyvas.includes(masyvas[i]))){
+            naujas_masyvas.push(masyvas[i]);
+        } 
+    }
+    return naujas_masyvas;
+}
+
+// console.log(findAllUniqueNumbers([1, 1, 2, 8, 8, 1, 4, 6]));
