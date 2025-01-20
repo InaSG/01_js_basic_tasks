@@ -118,13 +118,35 @@ function count_two_sums(matematikas_moka, turtuolis_moka, dienos){
     return `Per 31 d. matematikas turtuoliui sumokės ${matematiko_suma}, o turtuolis matematikui - ${turtuolio_suma.toFixed(2)}`;
 }
 
-console.log(count_two_sums(1000000, 0.02, 31));
+// console.log(count_two_sums(1000000, 0.02, 31));
 
 /*
 8. Parašyti programą kuri atspausdintu visus Armstrongo skaičius nuo 100 
 iki 999 intervale. Armstongo skaičiaus pvz ABC = A3 + B3 + C3 (visų
 atskirų skaitmenų pakeltų skaičiaus skaitmenų kiekio laipsniu suma.) 
+An Armstrong number of three digits is an integer such that the sum of the cubes of its digits is equal to the number itself
 */
+function isArmstrong(skaicius){
+    let skaitmenys = [];
+    let simboliai = (String(skaicius));
+    if (simboliai.length == 3){
+        let kubu_suma = 0;
+        for (let i = 0; i <3; i++){
+            skaitmenys.push(simboliai[i]);
+            kubas = Number(skaitmenys[i]) ** 3;
+            kubu_suma += kubas;
+        }
+        return(kubu_suma);
+    } else return "Skaičius turi būti triženklis";
+    
+}
+
+// for (let i = 100; i <= 999; i++){
+//     if (isArmstrong(i) === i){
+//         console.log(i);
+//     }
+// }
+
 
 /*
 9. Parašykite funkcija kuri paskaičiuotų atstumą tarp dviejų taškų
@@ -135,3 +157,14 @@ koordinačių sistemoje. Parametrai 4 perduodami skaičiai x1, y1, x2, y2
 (-5,0) (10,-10) => 
 18.027756377319946
 */
+
+function distance_between_dots([x,y], [x1,y1]){
+    let a = x - x1;
+    let b = y - y1;
+    let c = Math.sqrt(a**2 + b**2);
+    return c;
+}
+
+console.log(distance_between_dots([0,0], [0,1]));
+console.log(distance_between_dots([0,0], [1,0]));
+console.log(distance_between_dots([-5,0], [10,-10]));
