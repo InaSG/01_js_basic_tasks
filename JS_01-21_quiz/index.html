@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="quiz.css">
+    <title>quiz</title>
+</head>
+
+<body>
+    <!-- HTML struktūra:
+Sukurti pagrindinę HTML struktūrą su šiais elementais:
+Titulas (h1): „JavaScript QUIZ“. -->
+    <div class="flex">
+        <h1>JavaScript QUIZ</h1>
+        <!-- Mygtukas: „Pradėti QUIZ“ -->
+        <button id="start_button" onclick="pradeti()">Pradėti QUIZ</button>
+        <!-- Vieta klausimui ir atsakymams atvaizduoti: tuščias div su klase quiz-container. -->
+        <div class="quiz-container hidden" id="quiz_container"></div>
+    </div>
+
+    <script src="quiz.js"></script>
+</body>
+
+</html>

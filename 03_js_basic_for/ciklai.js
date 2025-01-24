@@ -52,6 +52,13 @@ Skaičius i = 10
 //     i+=2;
 // }
 
+// let i = 0;
+// do{ 
+//     console.log(`Skaičius i = ${i}`);
+//     i+=2;
+// }
+// while (i <= 10);
+
 /*
 4. Naudojantis ciklu, sumuokite visus skaičius nuo 1 iki 100 ir išveskite 
 galutinį rezultatą.
@@ -89,14 +96,13 @@ Uždavinį išspręskit dviem skirtingais būdais while ir for ciklu
 6. Parašyti f-ją, kuriai būtų paduodamas bet kokio ilgio skaičius ir 
 suskaičiuoja kiek skaitenų jį sudaro
 */
-// function countDigits(digits){
-//     //let rezult6 = String(digits).length;
-//     let digits = String(digits);
-//     return rezult6;
-// }
-// console.log(countDigits(458962));
-// console.log(countDigits(452));
-// console.log(countDigits(19));
+function countDigits(digits){
+    let rezult6 = String(Math.abs(digits)).length;
+    return rezult6;
+}
+console.log(countDigits(458964646464646461335462));
+console.log(countDigits(452));
+console.log(countDigits(-19));
 
 /*
 7. Matematikas, pastebėjęs gobšaus turtuolį pasiūlė tokį sandorį:
@@ -118,7 +124,7 @@ function count_two_sums(matematikas_moka, turtuolis_moka, dienos){
     return `Per 31 d. matematikas turtuoliui sumokės ${matematiko_suma}, o turtuolis matematikui - ${turtuolio_suma.toFixed(2)}`;
 }
 
-// console.log(count_two_sums(1000000, 0.02, 31));
+console.log(count_two_sums(1000000, 0.02, 31));
 
 /*
 8. Parašyti programą kuri atspausdintu visus Armstrongo skaičius nuo 100 
@@ -141,11 +147,11 @@ function isArmstrong(skaicius){
     
 }
 
-// for (let i = 100; i <= 999; i++){
-//     if (isArmstrong(i) === i){
-//         console.log(i);
-//     }
-// }
+for (let i = 100; i <= 999; i++){
+    if (isArmstrong(i) === i){
+        console.log(i);
+    }
+}
 
 
 /*
@@ -165,6 +171,6 @@ function distance_between_dots([x,y], [x1,y1]){
     return c;
 }
 
-console.log(distance_between_dots([0,0], [0,1]));
-console.log(distance_between_dots([0,0], [1,0]));
-console.log(distance_between_dots([-5,0], [10,-10]));
+// console.log(distance_between_dots([0,0], [0,1]));
+// console.log(distance_between_dots([0,0], [1,0]));
+// console.log(distance_between_dots([-5,0], [10,-10]));
