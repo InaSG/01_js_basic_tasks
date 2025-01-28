@@ -41,7 +41,7 @@ function gerBlogVidurkiai(mokiniuKiekis, blogVidurkis, gerVidurkis) {
     console.log(`Geriausiai besimokantys mokiniai: Nr. ${geriMokiniai} Vidurkis: ${gersVidurkis}`);
     console.log(`Blogiausiai besimokantys mokiniai: Nr. ${blogiMokiniai} Vidurkis: ${blogsVidurkis}`);
 }
-gerBlogVidurkiai(30, 1, 10);
+// gerBlogVidurkiai(30, 1, 10);
 
 /*
 2. Studento trimestro disciplinų skaičius yra 7, kiekvienoje disciplinoj min 3 
@@ -137,8 +137,8 @@ else didziausiaGrupe = atlyginimas600
 function sudvigubintiMasyva(array) {
     return array.concat(array);
   }
-// console.log(sudvigubintiMasyva(["Space", 10, true]));
-// console.log(sudvigubintiMasyva([0, 10, 20, 30, 40, 50]));
+console.log(sudvigubintiMasyva(["Space", 10, true]));
+console.log(sudvigubintiMasyva([0, 10, 20, 30, 40, 50]));
 
 /*
 5. Parašyti funkciją, kuri stringų masyvo elementus transformuoja į didžiasias 

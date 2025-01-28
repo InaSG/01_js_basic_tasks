@@ -4,14 +4,86 @@
     align-items: center;
     justify-content: center;
 }
+
 .hidden{
     display: none;
 }
 
+.button{
+    padding: 10px;
+    margin-top: 20px;
+    background-color: rgb(107, 203, 245);
+    border-radius: 10px;
+    border: 2px solid black;
+    min-width: 100px;
+}
+
+.button:hover{
+    cursor: pointer;
+}
+
 .quiz-container{
     margin: 10px auto;
+    padding: 0 20px;
     border: 2px solid black;
-    min-height: 200px;
+    min-height: 350px;
     min-width: 100px;
     width: 80%;
 }
+
+.italic{
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+
+#atsakymai{
+    align-items: start;
+    gap: 20px;
+    font-size: 18px;
+}
+
+.to_check_box{
+    appearance: none;
+    border: 1px solid #d3d3d3;
+    width: 20px;
+    height: 20px;
+    content: none;
+    outline: none;
+    margin: 0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+ }
+
+ .ats_konteineris{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ }
+ 
+ .to_check_box:checked {
+   appearance: none;
+   outline: none;
+   padding: 0;
+   content: none;
+   border: none;
+ }
+ 
+ .to_check_box:checked::before{
+   position: absolute;
+   color: green !important;
+   content: "\00A0\2713\00A0" !important;
+   border: 1px solid #d3d3d3;
+   font-weight: bolder;
+   font-size: 15px;
+ }
+
+ .atsakymas{
+    margin-left: 10px;
+ }
+
+ .ivertinimas{
+    margin-left: 100px;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(37, 151, 37);
+ }

@@ -17,7 +17,7 @@ const questions = [
   {
     question: "Ką daro 'document.querySelector'?",
     answers: ["Keičia stilių", "Pasirenka DOM elementą", "Prideda tekstą", "Sukuria funkciją"],
-    correctAnswer: 0
+    correctAnswer: 1
   }
 ];
 
@@ -30,9 +30,39 @@ Atvaizduoti pirmąjį klausimą ir atsakymų sąrašą iš masyvo.
 function pradeti(){
   const starto_mygtukas = document.querySelector("#start_button");
   const klausimo_deze = document.querySelector("#quiz_container");
+  const ats_variantai = document.querySelector("#atsakymai");
+  let atsakimuHTML = "";
   starto_mygtukas.classList.add("hidden");
   klausimo_deze.classList.remove("hidden");
+
+     for (let i=0; i < questions[0].answers.length; i++){
+     atsakimuHTML += `<input class ="to_check_box" id="k1a${i+1}" type ="radio" name="radio" 
+             onclick = "priimti_ats(this.value)" value = "${questions[0].answers[i]}">
+             ${questions[0].answers[i]}<br>`;
+  }
+  console.log(atsakimuHTML);
+  ats_variantai.innerHTML = atsakimuHTML;
 }
+
+function priimti_ats(ats){
+  if (ats === undefined){
+    document.querySelector("#ivertinimas").innerHTML = "Atsakymas nepateiktas";
+  } else {
+    document.querySelector("#ivertinimas").innerHTML = ats;
+  }
+}
+
+// function ivertinti_ats(priimti_ats){
+//   if (ats === undefined){
+//     document.querySelector("#ivertinimas").innerHTML = "Atsakymas nepateiktas";
+//   } else if (ats == questions[0].answers[questions[0].correctAnswer]){
+//     document.querySelector("#ivertinimas").innerHTML = "Atsakymas teisingas";
+//   } else {
+//     document.querySelector("#ivertinimas").innerHTML = "Atsakymas neteisingas";
+//   }
+// }
+
+
 // Įsitikinti, kad atsakymai yra paspaudžiami (pridėti mygtukus su įvykio stebėtojais).
 // Atsakymo tikrinimas:
 // Pasirinkus atsakymą:
