@@ -1,8 +1,15 @@
-.flex{
+.flex_center{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.flex_right{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
 }
 
 .hidden{
@@ -80,10 +87,26 @@
     margin-left: 10px;
  }
 
- .ivertinimas{
-    margin-left: 100px;
+ .teisingai{
     font-size: 1.5em;
     font-weight: bold;
     text-transform: uppercase;
     color: rgb(37, 151, 37);
+ }
+ .neteisingai{
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(180, 32, 32);
+ }
+
+ .teisingas_ats{
+    font-size: 1em;
+    text-transform: lowercase;
+ }
+
+ .nepasirinktas_ats{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgb(180, 32, 32);
  }
