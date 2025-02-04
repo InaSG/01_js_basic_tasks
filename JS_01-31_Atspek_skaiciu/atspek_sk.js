@@ -1,4 +1,8 @@
-const game = [
+function rand(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+const levels = [
     {
         level: 1,
         number_to: 10,
@@ -107,30 +111,42 @@ const level_text_el = document.getElementById("level_text");
 const game_zone_el = document.getElementById("game_zone");
 
 
-btn_pradeti_el.innerText = "Pradėti žaidimą";
-btn_pradeti_el.addEventListener("click", pradeti_zaidima);
 
-function pradeti_zaidima() {
+let l = 0;
+let a = 1;
+
+let atsakymas = rand(1, levels[l].number_to);
+console.log(atsakymas);
+
+
+btn_pradeti_el.innerText = "Pradėti žaidimą";
+btn_pradeti_el.addEventListener("click", start_game);
+
+function start_game() {
     btn_pradeti_el.innerText = "Iš naujo";
     // TODO: užšaldyti mygtuką iki pirmo lygio pabaigos
+    
     description_block_el.innerHTML = "";
 
     level_text_el.innerHTML = `<div class="level_text" ><span class="bold">
-    ${game[0].level} lygis</span>: atspėk skaičių nuo 1 iki ${game[0].number_to}</div>`;
-
+    ${levels[l].level} lygis</span>: atspėk skaičių nuo 1 iki ${levels[l].number_to}</div>`;
+        
     const guessing_zone_el = document.createElement("div");
     guessing_zone_el.innerHTML = `<div class="attempt_number" id="attempt_number">
-                                    Spėjimas 1:
+                                    Spėjimas ${a}:
                                 </div>
-                                <input class="flex attempt" id="attempts" type="text"/>
+                                <input class="flex attempt" id="attempts" type="text">
                                 <button class="btn_speti" id="btn_speti">Spėti</button>`;
     game_zone_el.appendChild(guessing_zone_el);
     guessing_zone_el.className = "flex";
+    const btn_speti_el = document.getElementById("btn_speti");
+    btn_speti_el.addEventListener("click", () => {guessing(l)});
+
 
     const attempts_container_el = document.createElement("div");
     
     let attempts_container_el_html = "";
-    for (let i = 1; i<= game[0].attempts; i++){
+    for (let i = 1; i<= levels[l].attempts; i++){
         attempts_container_el_html +=  `<div class="attempt${i}_card flex_column">
                                             <div class="each_attempt" id="attempt${i}"></div>
                                             <div class="attempt_desc">Spėjimas ${i}</div>
@@ -140,5 +156,30 @@ function pradeti_zaidima() {
     attempts_container_el.innerHTML = attempts_container_el_html;
     game_zone_el.appendChild(attempts_container_el);
     attempts_container_el.className = "attempts_container";
+};
 
+
+function guessing(level){
+    const attempts_input_el = document.getElementById("attempts");
+
+    for (let i = 1; i <= levels[level].attempts; i++){
+        let attempt_el = document.getElementById(`attempt${i}`);
+        console.log(attempt_el);
+        let spejimas = attempts_input_el.value; 
+        if (!Number(spejimas) || Number(spejimas) > levels[level].number_to || Number(spejimas) < 1){
+            attempts_input_el.value = "";
+            return alert(`Įveskite skaičių nuo 1 iki ${levels[level].number_to}`);
+        } else {
+            if(Number(spejimas) === atsakymas){
+                attempts_input_el.value = "";
+                return alert("ATSPĖJAI !!!");
+            } else {
+                alert("NEATSPĖJAI. Bandyk dar kartą!")
+                attempt_el.innerText = Number(spejimas);
+                attempts_input_el.value = "";
+                // attempts_input_el.innerText = "";
+            }
+        }
+        break;
+    }
 };
