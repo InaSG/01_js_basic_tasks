@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="vaizdelis.css">
+    <title>Document</title>
+</head>
+<body>
+<!-- Sukurkite formą, kurioje būtų vykdomas darbuotojų check-in atvykus į darbą
+Forma turės laukelius:
+Darbuotojo vardas
+Darbuotojo pavardė
+Darbuotojo numeris -->
+<fieldset>
+    <br><br>
+    <legend>Darbuotojų registracija</legend>
+    <label for="vardas">Vardas</label>
+    <input type="text" id="vardas">
+    <p id="vardo_tikrinimas"></p>
+    <br><br>
+    <label for="pavarde">Pavardė</label>
+    <input type="text" id="pavarde">
+    <p id="pavardes_tikrinimas"></p>
+    <br><br>
+    <label for="darb_numeris">Darbuotojo numeris</label>
+    <input type="text" id="darb_numeris">
+    <p id="numerio_tikrinimas"></p>
+    <br><br>
+    <button id="mygtukas_registruotis">Registruotis</button>
+    <br><br>
+</fieldset>
+    <script src="event_listener.js"></script>
+</body>
+</html>

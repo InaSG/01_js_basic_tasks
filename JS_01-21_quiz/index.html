@@ -12,7 +12,7 @@
     <!-- HTML struktūra:
 Sukurti pagrindinę HTML struktūrą su šiais elementais:
 Titulas (h1): „JavaScript QUIZ“. -->
-    <div class="flex_center">
+    <div class="flex_center" id="pavadinimo_div">
         <h1>JavaScript QUIZ</h1>
         <!-- Mygtukas: „Pradėti QUIZ“ -->
         <button class="button" id="start_button" onclick="pradeti()">Pradėti QUIZ</button>
@@ -21,12 +21,12 @@ Titulas (h1): „JavaScript QUIZ“. -->
             <h2>Pažymėkite teisingą atsakymą!</h2>
             <h3 id="klausimas"></h3>
             <div class="ats_konteineris">
-                <div class="flex_right">
+                <div class="flex_left ats_blokas">
                     <div class="atsakymai" id="atsakymai"></div>
                     <button class="button flex" id="pateikti">Pateikti</button>
                 </div>
-                <div class="flex_right">
-                    <div id="ivertinimas"></div>
+                <div class="flex_left ats_blokas" id="ivertinimai">
+                    <div class="ivertinimas" id="ivertinimas"></div>
                     <div class="teisingas_ats" id="teisingas_ats"></div>
                 </div>
             </div>
