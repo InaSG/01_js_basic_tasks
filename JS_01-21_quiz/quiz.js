@@ -68,6 +68,7 @@ const questions = [
 
 const starto_mygtukas = document.querySelector("#start_button");
 const klausimo_deze = document.querySelector("#quiz_container");
+const uzduoties_el = document.querySelector("#uzduotis");
 const klausimas = document.getElementById("klausimas");
 const ats_variantai = document.querySelector("#atsakymai");
 const pateikti_mygtukas = document.querySelector("#pateikti");
@@ -75,6 +76,7 @@ const ivertinimo_bloko_el = document.getElementById("ivertinimai");
 const ivertinimo_el = document.getElementById("ivertinimas");
 const teisingo_ats_pateikimo_el = document.getElementById("teisingas_ats");
 const pavadinimo_dezes_el = document.getElementById("pavadinimo_div");
+const galutinio_ivertinimo_el = document.createElement("h3");
 
 let teisingu_ats_skaicius = 0;
 let j = 0;
@@ -86,29 +88,29 @@ Paspaudus „Pradėti QUIZ“ mygtuką:
 Slėpti mygtuką.
 */
 function pradeti() {
+  teisingu_ats_skaicius = 0;
   j = 0;
-  // atsakimuHTML = "";
+  galutinio_ivertinimo_el.remove();
   teisingo_ats_pateikimo_el.innerText = "";
   ivertinimo_el.innerText = "";
   starto_mygtukas.classList.add("hidden");
   klausimo_deze.classList.remove("hidden");
   pateikti_mygtukas.classList.remove("hidden");
+  pavadinimo_dezes_el.insertAdjacentElement("beforeend", klausimo_deze);
   pateikti_klausima();
 }
-
-//TODO: nebeleisti keisti ats. po pateikimo;
 
 /*Atvaizduoti pirmąjį klausimą ir atsakymų sąrašą iš masyvo.*/
 
 function pateikti_klausima() {
   pateikti_mygtukas.disabled = false;
+  uzduoties_el.innerHTML = "Pasirinkite teisingą atsakymą!";
   let atsakimuHTML = "";
   for (let i = 0; i < questions[j].answers.length; i++) {
     atsakimuHTML += `<input class ="to_check_box" id="k1a${i + 1}" type ="radio" name="radio" 
               value = "${questions[j].answers[i]}">
                ${questions[j].answers[i]}<br>`;
   }
-  // console.log(atsakimuHTML);
   klausimas.innerText =  `${j+1}. ${questions[j].question}`;
   ats_variantai.innerHTML = atsakimuHTML;
   j++;
@@ -160,14 +162,20 @@ function priimti_ats() {
       ivertinimo_el.innerText = "neteisingai";
       teisingo_ats_pateikimo_el.innerText = `teisingas atsakymas - "${questions[j-1].answers[questions[j-1].correctAnswer]}"`;
     } 
-    setTimeout(() => {
       if (j < questions.length) {
-        ivertinimo_el.innerText = "";
-        teisingo_ats_pateikimo_el.innerText = "";
-        pateikti_klausima();
-    } else {
-      ivertinti_rezultatus();
-    }}, 500);
+          if (ats_indeksas == questions[j-1].correctAnswer){
+            setTimeout(()=>{
+              ivertinimo_el.innerText = "";
+              teisingo_ats_pateikimo_el.innerText = "";
+              pateikti_klausima();}, 500);
+            } else {
+              setTimeout(()=>{
+              ivertinimo_el.innerText = "";
+              teisingo_ats_pateikimo_el.innerText = "";
+              pateikti_klausima();}, 3000);
+              };
+    } else ivertinti_rezultatus();
+    
   } else {
       ivertinimo_el.className = "nepasirinktas_ats";
       ivertinimo_el.innerText = "Pasirinkite teisingą atsakymą";
@@ -175,31 +183,23 @@ function priimti_ats() {
 }
 
 // Rezultatų atvaizdavimas:
-
 function ivertinti_rezultatus(){
   let teisingas_linksnis = "klausimus";
   if (teisingu_ats_skaicius == 1) teisingas_linksnis = "klausimą";
   else if (teisingu_ats_skaicius > 9 || teisingu_ats_skaicius === 0) teisingas_linksnis = "klausimų";
 
   // Atvaizduoti bendrą rezultatą (alert arba div elemente).
-  // klausimo_deze.classList.add("hidden");
-
-  // const galutinio_ivertinimo_el = document.createElement("div");
-  // galutinio_ivertinimo_el.textContent = `Teisingai atsakėte į ${teisingu_ats_skaicius} ${teisingas_linksnis}`;
-  // pavadinimo_dezes_el.insertAdjacentElement("afterbegin", galutinio_ivertinimo_el);
-  let galutinis_ivertinimas = `Teisingai atsakėte į ${teisingu_ats_skaicius} ${teisingas_linksnis}`;
-  // if (teisingu_ats_skaicius > 3) galutinio_ivertinimo_el.className = "teisingai";
-  // else galutinio_ivertinimo_el.className = "neteisingai";
+   klausimo_deze.remove();
+  pavadinimo_dezes_el.insertAdjacentElement("beforeend", galutinio_ivertinimo_el);
+  let galutinis_ivertinimas = `Teisingai atsakėte į ${teisingu_ats_skaicius} ${teisingas_linksnis} iš ${questions.length}`;
+  if (teisingu_ats_skaicius > 3) galutinio_ivertinimo_el.className = "patenkinamai";
+  else galutinio_ivertinimo_el.className = "nepatenkinamai";
   console.log(galutinis_ivertinimas);
-  atsakimuHTML = "";
-  teisingo_ats_pateikimo_el.innerText = galutinis_ivertinimas;
-  ivertinimo_el.innerText = "";
-  starto_mygtukas.classList.add("hidden");
-  pateikti_mygtukas.classList.add("hidden");
- 
-  // Pridėti mygtuką „Pradėti iš naujo“, kuris leidžia iš naujo pradėti quiz'ą.
+  galutinio_ivertinimo_el.innerText = galutinis_ivertinimas;
+  galutinio_ivertinimo_el.classList.add("ivertinimas");
+  starto_mygtukas.innerText = "Pradėti iš naujo";
   starto_mygtukas.classList.remove("hidden");
-  // pateikti_mygtukas.classList.add("hidden");
+  starto_mygtukas.addEventListener("click", pradeti);
 };
 
 

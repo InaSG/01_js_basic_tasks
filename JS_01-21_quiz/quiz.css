@@ -83,10 +83,16 @@
    font-size: 15px;
  }
 
+ .kl_blokas{
+    position: relative;
+    width: 50%;
+ }
+
  .ats_blokas{
     position: relative;
     width: 50%;
  }
+
 
  .atsakymas{
     margin-left: 10px;
@@ -121,6 +127,13 @@
     text-transform: lowercase;
  }
 
+ .ivertinimas{
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+ }
+
  .nepasirinktas_ats{
     position: absolute;
     top: -50px;
@@ -129,3 +142,21 @@
     font-weight: bold;
     color: rgb(180, 32, 32);
  }
+
+ .patenkinamai{
+    text-align: center;
+    margin-top: 200px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgb(37, 151, 37);
+ }
+
+ .nepatenkinamai{
+    text-align: center;
+    margin-top: 200px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgb(180, 32, 32);
+ }
+
+

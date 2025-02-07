@@ -18,10 +18,10 @@ Titulas (h1): „JavaScript QUIZ“. -->
         <button class="button" id="start_button" onclick="pradeti()">Pradėti QUIZ</button>
         <!-- Vieta klausimui ir atsakymams atvaizduoti: tuščias div su klase quiz-container. -->
         <div class="quiz-container hidden" id="quiz_container">
-            <h2>Pažymėkite teisingą atsakymą!</h2>
+            <h2 id="uzduotis"></h2>
             <h3 id="klausimas"></h3>
-            <div class="ats_konteineris">
-                <div class="flex_left ats_blokas">
+            <div class="ats_konteineris" id="atsakymu_konteineris">
+                <div class="flex_left kl_blokas">
                     <div class="atsakymai" id="atsakymai"></div>
                     <button class="button flex" id="pateikti">Pateikti</button>
                 </div>
