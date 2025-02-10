@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.forma{
+    margin: 3%;
+    display: grid;
+    grid-template-areas: 
+        "vardo_etikete vardo_ivestis"
+        "tuscias1 vardo_tikrinimas"
+        "pavardes_etikete pavardes_ivestis"
+        "tuscias2 pavardes_tikrinimas"
+        "numerio_etikete numerio_ivestis"
+        "tuscias3 numerio_tikrinimas"
+        "tuscias4 mygtukas_registruotis"
+        "tuscias5 patvirtinimas";
+    grid-template-columns: 1fr 4fr;
+    gap: 10px;
+}
+
+.vardo_zona label{
+    grid-area: vardo_etikete;
+}
+
+.vardo_zona input{
+    grid-area: vardo_ivestis;
+}
+
+.vardo_zona p{
+    grid-area: vardo_tikrinimas;
+}
+
+.vardo_zona .tuscias{
+    grid-area: tuscias1;
+}
+
+.pavardes_zona label{
+    grid-area: pavardes_etikete;
+}
+
+.pavardes_zona input{
+    grid-area: pavardes_ivestis;
+}
+
+.pavardes_zona .tuscias{
+    grid-area: tuscias2;
+}
+
+.pavardes_zona p{
+    grid-area: pavardes_tikrinimas;
+}
+
+.numerio_zona label{
+    grid-area: numerio_etikete;
+}
+
+.numerio_zona input{
+    grid-area: numerio_ivestis;
+}
+
+.numerio_zona .tuscias{
+    grid-area: tuscias3;
+}
+
+.numerio_zona p{
+    grid-area: numerio_tikrinimas;
+}
+
+.mygtuko_zona .tuscias{
+    grid-area: tuscias4;
+}
+
+.mygtuko_zona button{
+    grid-area: mygtukas_registruotis;
+}
+
+.patvirtinimo_zona div{
+    grid-area: tuscias5;
+}
+
+.patvirtinimo_zona p{
+    grid-area: patvirtinimas;
+}
+
+legend{
+    margin-left: 10%;
+}
+
+label{
+    margin: 3%;
+    text-align: right;
+}
+input{
+    width: 440px;
+    border-radius: 5px;
+    padding: 5px 15px;
+}
+
+.tikrinimas{
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.green{
+    color: green;
+}
+
+.red{
+    color: rgb(143, 29, 29);
+}
+
+button{
+    width: 150px;
+    border-radius: 5px;
+    padding: 10px;
+    color: rgb(82, 72, 196);
+    background-color: rgb(217, 214, 249);
+}
+
+button:hover{
+    cursor: pointer;
+    color: rgb(236, 235, 248);
+    background-color: rgb(82, 72, 196); 
+}
+
+.registr_patvirtinimas{
+    font-size: 1.5rem;
+}

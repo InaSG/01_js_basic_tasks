@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="vaizdelis.css">
     <title>Document</title>
 </head>
+
 <body>
-<!-- Sukurkite formą, kurioje būtų vykdomas darbuotojų check-in atvykus į darbą
+    <!-- Sukurkite formą, kurioje būtų vykdomas darbuotojų check-in atvykus į darbą
 Forma turės laukelius:
 Darbuotojo vardas
 Darbuotojo pavardė
 Darbuotojo numeris -->
-<fieldset>
-    <br><br>
-    <legend>Darbuotojų registracija</legend>
-    <label for="vardas">Vardas</label>
-    <input type="text" id="vardas">
-    <p id="vardo_tikrinimas"></p>
-    <br><br>
-    <label for="pavarde">Pavardė</label>
-    <input type="text" id="pavarde">
-    <p id="pavardes_tikrinimas"></p>
-    <br><br>
-    <label for="darb_numeris">Darbuotojo numeris</label>
-    <input type="text" id="darb_numeris">
-    <p id="numerio_tikrinimas"></p>
-    <br><br>
-    <button id="mygtukas_registruotis">Registruotis</button>
-    <br><br>
-</fieldset>
+    <fieldset>
+        <legend>Darbuotojų registracija</legend>
+        <div class="forma">
+            <label class="vardo_zona" for="vardas">Vardas</label>
+            <input class="vardo_zona" type="text" id="vardas">
+            <div class="vardo_zona tuscias"></div>
+            <p class="vardo_zona" class="tikrinimas" id="vardo_tikrinimas"></p>
+            <label class="pavardes_zona" for="pavarde">Pavardė</label>
+            <input class="pavardes_zona" type="text" id="pavarde">
+            <div class="pavardes_zona tuscias"></div>
+            <p class="pavardes_zona" id="pavardes_tikrinimas"></p>
+            <label class="numerio_zona" for="darb_numeris">Darbuotojo numeris</label>
+            <input class="numerio_zona" type="text" maxlength="7" id="darb_numeris">
+            <div class="numerio_zona tuscias"></div>
+            <p class="numerio_zona" id="numerio_tikrinimas"></p>
+            <div class="mygtuko_zona tuscias"></div>
+            <button class="mygtuko_zona" id="mygtukas_registruotis">Registruotis</button>
+            <div class="patvirtinimo_zona"></div>
+            <p class="patvirtinimo_zona" id="registr_patvirtinimas"></p>
+        </div>
+    </fieldset>
     <script src="event_listener.js"></script>
 </body>
+
 </html>
