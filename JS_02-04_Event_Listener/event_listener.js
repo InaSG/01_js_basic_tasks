@@ -20,7 +20,7 @@ function gauti_registraciju_duomoenis(){
     const duomenys = JSON.parse(localStorage.getItem("Registracijos"));
     console.log(`is localStorage gauta: ${duomenys}`)
     if (!duomenys) return [];
-    else return JSON.parse(duomenys);
+    else return (duomenys);
 };
 
 vardo_ivesties_el.addEventListener("keydown", (event)=>{
