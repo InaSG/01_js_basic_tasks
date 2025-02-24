@@ -1,0 +1,11 @@
+li{
+    text-decoration: none;
+    color: black;
+}
+
+div{
+    display: flex;
+    gap: 200px;
+    align-content: center;
+    flex-direction: column-reverse;
+}
